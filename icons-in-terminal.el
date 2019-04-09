@@ -68,7 +68,7 @@
   :group 'icons-in-terminal
   :type 'number)
 
-(defvar icons-in-terminal-icon-spec
+(defvar icons-in-terminal-icon-alist
   '(;; Meta
     ("\\.tags"          icons-in-terminal-octicon "tag"                     :height 1.0 :v-adjust 0.0 :face icons-in-terminal-blue)
     ("^TAGS$"           icons-in-terminal-octicon "tag"                     :height 1.0 :v-adjust 0.0 :face icons-in-terminal-blue)
@@ -639,7 +639,7 @@ If SHOW-FAMILY is non-nil, displays the icons family in the candidate string."
 ;; Family Face Functions
 (defun icons-in-terminal-icon-family-for-file (file)
   "Get the icons font family for FILE."
-  (let ((icon (icons-in-terminal-match-to-alist file icons-in-terminal-icon-spec)))
+  (let ((icon (icons-in-terminal-match-to-alist file icons-in-terminal-icon-alist)))
     (funcall (intern (format "%s-family" (car icon))))))
 
 (defun icons-in-terminal-icon-family-for-mode (mode)
@@ -728,7 +728,7 @@ When F is provided, the info function is calculated with the format
 ARG-OVERRIDES should be a plist containning `:height',
 `:v-adjust' or `:face' properties like the normal icon
 inserting functions."
-  (let* ((icon (icons-in-terminal-match-to-alist file icons-in-terminal-icon-spec))
+  (let* ((icon (icons-in-terminal-match-to-alist file icons-in-terminal-icon-alist))
          (args (cdr icon)))
     (when arg-overrides (setq args (append `(,(car args)) arg-overrides (cdr args))))
     (apply (car icon) args)))
