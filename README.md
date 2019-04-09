@@ -8,7 +8,7 @@ icons.
 
 ## Installation
 
-### Install fonts
+### Install font
 
 The Resource Font *MUST* be installed first to make the icons work in Emacs.
 

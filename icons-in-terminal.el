@@ -400,7 +400,7 @@
     (cfw:calendar-mode         icons-in-terminal-octicon "calendar"            :v-adjust 0.0)
     (ibuffer-mode              icons-in-terminal-faicon "files-o"              :v-adjust 0.0 :face icons-in-terminal-dsilver)
     (messages-buffer-mode      icons-in-terminal-faicon "stack-overflow"       :v-adjust -0.1)
-    (help-mode                 icons-in-terminal-faicon "info-circle-o"        :height 1.1 :v-adjust -0.1)
+    (help-mode                 icons-in-terminal-faicon "info-circle"          :height 1.1 :v-adjust -0.1)
     (Info-mode                 icons-in-terminal-faicon "info-circle"          :height 1.1 :v-adjust -0.1 :face icons-in-terminal-lcyan)
     (benchmark-init/tree-mode  icons-in-terminal-octicon "dashboard"           :v-adjust 0.0)
     (jenkins-mode              icons-in-terminal-fileicon "jenkins"            :face icons-in-terminal-blue)
