@@ -541,6 +541,7 @@
         ("trash-o" . "\xe0f4")
         ("home" . "\xe0f5")
         ("file-o" . "\xe0f6")
+        ("files-o" . "\xe18e")
         ("clock-o" . "\xe0f7")
         ("road" . "\xe0f8")
         ("download" . "\xe0f9")
