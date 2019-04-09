@@ -252,7 +252,7 @@
     ("\\.html?$"        icons-in-terminal-fileicon "html5"                  :face icons-in-terminal-orange)
     ("\\.inky-erb?$"    icons-in-terminal-fileicon "html5"                  :face icons-in-terminal-lred)
     ("\\.erb$"          icons-in-terminal-fileicon "html5"                  :face icons-in-terminal-lred)
-    ("\\.hbs$"          icons-in-terminal-fileicon "mustache"              :face icons-in-terminal-green)
+    ("\\.hbs$"          icons-in-terminal-fileicon "mustache"               :face icons-in-terminal-green)
     ("\\.inky-slim$"    icons-in-terminal-octicon "dashboard"               :v-adjust 0.0 :face icons-in-terminal-yellow)
     ("\\.slim$"         icons-in-terminal-octicon "dashboard"               :v-adjust 0.0 :face icons-in-terminal-yellow)
     ("\\.jade$"         icons-in-terminal-fileicon "jade"                   :face icons-in-terminal-red)
@@ -318,12 +318,12 @@
     ("^\\."             icons-in-terminal-octicon "gear"                    :v-adjust 0.0)
     ("."                icons-in-terminal-faicon "file-o"                   :height 0.8 :v-adjust 0.0 :face icons-in-terminal-dsilver)))
 
-(defvar icons-in-terminal-dir-icon-spec
+(defvar icons-in-terminal-dir-icon-alist
   '(
     ("trash"            icons-in-terminal-faicon "trash-o"          :height 1.2 :v-adjust -0.1)
     ("dropbox"          icons-in-terminal-faicon "dropbox"          :height 1.0 :v-adjust -0.1)
-    ("google[ _-]drive" icons-in-terminal-fileicon "google-drive" :height 1.3 :v-adjust -0.1)
-    ("^atom$"           icons-in-terminal-fileicon "atom"         :height 1.2 :v-adjust -0.1)
+    ("google[ _-]drive" icons-in-terminal-fileicon "google-drive"   :height 1.3 :v-adjust -0.1)
+    ("^atom$"           icons-in-terminal-fileicon "atom"           :height 1.2 :v-adjust -0.1)
     ("documents"        icons-in-terminal-faicon "book"             :height 1.0 :v-adjust -0.1)
     ("download"         icons-in-terminal-faicon "cloud-download"   :height 0.9 :v-adjust -0.2)
     ("desktop"          icons-in-terminal-octicon "device-desktop"  :height 1.0 :v-adjust -0.1)
@@ -338,7 +338,7 @@
     ("."                icons-in-terminal-octicon "file-directory"  :height 1.0 :v-adjust -0.1)
     ))
 
-(defvar icons-in-terminal-weather-icon-spec
+(defvar icons-in-terminal-weather-icon-alist
   '(
     ("tornado"               icons-in-terminal-weather "tornado")
     ("hurricane"             icons-in-terminal-weather "hurricane")
@@ -372,21 +372,21 @@
     ("not.*available"        icons-in-terminal-weather "na")
     ))
 
-(defvar icons-in-terminal-mode-icon-spec
+(defvar icons-in-terminal-mode-icon-alist
   '(
     (emacs-lisp-mode           icons-in-terminal-fileicon "elisp"              :height 1.0 :v-adjust -0.2 :face icons-in-terminal-purple)
-    (erc-mode                  icons-in-terminal-faicon "commenting-o"         :height 1.0 :v-adjust 0.0 :face icons-in-terminal-white)
+    (erc-mode                  icons-in-terminal-faicon "commenting-o"         :height 1.0 :v-adjust 0.0)
     (inferior-emacs-lisp-mode  icons-in-terminal-fileicon "elisp"              :height 1.0 :v-adjust -0.2 :face icons-in-terminal-lblue)
     (dired-mode                icons-in-terminal-octicon "file-directory"      :v-adjust 0.0)
     (lisp-interaction-mode     icons-in-terminal-fileicon "lisp"               :v-adjust -0.1 :face icons-in-terminal-orange)
-    (sly-mrepl-mode            icons-in-terminal-fileicon "clisp"               :v-adjust -0.1 :face icons-in-terminal-orange)
-    (slime-repl-mode           icons-in-terminal-fileicon "clisp"               :v-adjust -0.1 :face icons-in-terminal-orange)
+    (sly-mrepl-mode            icons-in-terminal-fileicon "clisp"              :v-adjust -0.1 :face icons-in-terminal-orange)
+    (slime-repl-mode           icons-in-terminal-fileicon "clisp"              :v-adjust -0.1 :face icons-in-terminal-orange)
     (org-mode                  icons-in-terminal-fileicon "org"                :v-adjust 0.0 :face icons-in-terminal-lgreen)
     (typescript-mode           icons-in-terminal-fileicon "typescript"         :v-adjust -0.1 :face icons-in-terminal-blue-alt)
-    (js-mode                   icons-in-terminal-fileicon "javascript"       :v-adjust -0.1 :face icons-in-terminal-yellow)
-    (js-jsx-mode               icons-in-terminal-fileicon "javascript"       :v-adjust -0.1 :face icons-in-terminal-yellow)
-    (js2-mode                  icons-in-terminal-fileicon "javascript"       :v-adjust -0.1 :face icons-in-terminal-yellow)
-    (js3-mode                  icons-in-terminal-fileicon "javascript"       :v-adjust -0.1 :face icons-in-terminal-yellow)
+    (js-mode                   icons-in-terminal-fileicon "javascript"         :v-adjust -0.1 :face icons-in-terminal-yellow)
+    (js-jsx-mode               icons-in-terminal-fileicon "javascript"         :v-adjust -0.1 :face icons-in-terminal-yellow)
+    (js2-mode                  icons-in-terminal-fileicon "javascript"         :v-adjust -0.1 :face icons-in-terminal-yellow)
+    (js3-mode                  icons-in-terminal-fileicon "javascript"         :v-adjust -0.1 :face icons-in-terminal-yellow)
     (rjsx-mode                 icons-in-terminal-fileicon "jsx-2"              :v-adjust -0.1 :face icons-in-terminal-cyan-alt)
     (term-mode                 icons-in-terminal-octicon "terminal"            :v-adjust 0.2)
     (eshell-mode               icons-in-terminal-octicon "terminal"            :v-adjust 0.0 :face icons-in-terminal-purple)
@@ -400,7 +400,8 @@
     (cfw:calendar-mode         icons-in-terminal-octicon "calendar"            :v-adjust 0.0)
     (ibuffer-mode              icons-in-terminal-faicon "files-o"              :v-adjust 0.0 :face icons-in-terminal-dsilver)
     (messages-buffer-mode      icons-in-terminal-faicon "stack-overflow"       :v-adjust -0.1)
-    (help-mode                 icons-in-terminal-faicon "info"                 :v-adjust -0.1 :face icons-in-terminal-purple)
+    (help-mode                 icons-in-terminal-faicon "info-circle-o"        :height 1.1 :v-adjust -0.1)
+    (Info-mode                 icons-in-terminal-faicon "info-circle"          :height 1.1 :v-adjust -0.1 :face icons-in-terminal-lcyan)
     (benchmark-init/tree-mode  icons-in-terminal-octicon "dashboard"           :v-adjust 0.0)
     (jenkins-mode              icons-in-terminal-fileicon "jenkins"            :face icons-in-terminal-blue)
     (magit-popup-mode          icons-in-terminal-fileicon "git"                :face icons-in-terminal-red)
@@ -412,9 +413,9 @@
     ;; Special matcher for Web Mode based on the `web-mode-content-type' of the current buffer
     (web-mode             icons-in-terminal--web-mode-icon)
 
-    (fundamental-mode                   icons-in-terminal-fileicon "elisp"            :height 1.0 :v-adjust -0.2 :face icons-in-terminal-dsilver)
-    (special-mode                       icons-in-terminal-fileicon "elisp"            :height 1.0 :v-adjust -0.2 :face icons-in-terminal-yellow)
-    (text-mode                          icons-in-terminal-octicon "file-text"         :v-adjust 0.0 :face icons-in-terminal-cyan)
+    (fundamental-mode                   icons-in-terminal-fileicon "elisp"          :height 1.0 :v-adjust -0.2 :face icons-in-terminal-dsilver)
+    (special-mode                       icons-in-terminal-fileicon "elisp"          :height 1.0 :v-adjust -0.2 :face icons-in-terminal-yellow)
+    (text-mode                          icons-in-terminal-octicon "file-text"       :v-adjust 0.0 :face icons-in-terminal-cyan)
     (ruby-mode                          icons-in-terminal-fileicon "ruby-alt"       :face icons-in-terminal-lred)
     (inf-ruby-mode                      icons-in-terminal-fileicon "ruby-alt"       :face icons-in-terminal-red)
     (projectile-rails-compilation-mode  icons-in-terminal-fileicon "ruby-alt"       :face icons-in-terminal-red)
@@ -468,29 +469,29 @@
     (sass-mode                          icons-in-terminal-fileicon "sass"           :face icons-in-terminal-dpink)
     (less-css-mode                      icons-in-terminal-fileicon "less"           :height 0.8  :face icons-in-terminal-dyellow)
     (stylus-mode                        icons-in-terminal-fileicon "stylus"         :face icons-in-terminal-lgreen)
-    (csv-mode                           icons-in-terminal-octicon "graph"             :v-adjust 0.0 :face icons-in-terminal-dblue)
+    (csv-mode                           icons-in-terminal-octicon "graph"           :v-adjust 0.0 :face icons-in-terminal-dblue)
     (haskell-mode                       icons-in-terminal-fileicon "haskell"        :height 1.0  :face icons-in-terminal-red)
-    (haml-mode                          icons-in-terminal-fileicon "haml"             :face icons-in-terminal-lyellow)
+    (haml-mode                          icons-in-terminal-fileicon "haml"           :face icons-in-terminal-lyellow)
     (html-mode                          icons-in-terminal-fileicon "html5"          :face icons-in-terminal-orange)
     (rhtml-mode                         icons-in-terminal-fileicon "html5"          :face icons-in-terminal-lred)
-    (mustache-mode                      icons-in-terminal-fileicon "mustache"        :face icons-in-terminal-green)
-    (slim-mode                          icons-in-terminal-octicon "dashboard"         :v-adjust 0.0 :face icons-in-terminal-yellow)
-    (jade-mode                          icons-in-terminal-fileicon "jade"             :face icons-in-terminal-red)
-    (pug-mode                           icons-in-terminal-fileicon "pug"              :face icons-in-terminal-red)
+    (mustache-mode                      icons-in-terminal-fileicon "mustache"       :face icons-in-terminal-green)
+    (slim-mode                          icons-in-terminal-octicon "dashboard"       :v-adjust 0.0 :face icons-in-terminal-yellow)
+    (jade-mode                          icons-in-terminal-fileicon "jade"           :face icons-in-terminal-red)
+    (pug-mode                           icons-in-terminal-fileicon "pug"            :face icons-in-terminal-red)
     (react-mode                         icons-in-terminal-fileicon "react"          :height 1.1  :face icons-in-terminal-lblue)
-    (image-mode                         icons-in-terminal-octicon "file-media"        :v-adjust 0.0 :face icons-in-terminal-blue)
-    (texinfo-mode                       icons-in-terminal-fileicon "tex"              :face icons-in-terminal-lred)
-    (markdown-mode                      icons-in-terminal-octicon "markdown"          :v-adjust 0.0 :face icons-in-terminal-lblue)
-    (gfm-mode                           icons-in-terminal-octicon "markdown"          :face icons-in-terminal-blue)
-    (bibtex-mode                        icons-in-terminal-fileicon "bib"              :face icons-in-terminal-maroon)
-    (org-mode                           icons-in-terminal-fileicon "org"              :face icons-in-terminal-lgreen)
-    (compilation-mode                   icons-in-terminal-faicon "cogs"               :v-adjust 0.0 :height 1.0)
-    (objc-mode                          icons-in-terminal-faicon "apple"              :v-adjust 0.0 :height 1.0)
-    (tuareg-mode                        icons-in-terminal-fileicon "ocaml"            :v-adjust 0.0 :height 1.0)
-    (purescript-mode                    icons-in-terminal-fileicon "purescript"       :v-adjust 0.0 :height 1.0)
+    (image-mode                         icons-in-terminal-octicon "file-media"      :v-adjust 0.0 :face icons-in-terminal-blue)
+    (texinfo-mode                       icons-in-terminal-fileicon "tex"            :face icons-in-terminal-lred)
+    (markdown-mode                      icons-in-terminal-octicon "markdown"        :v-adjust 0.0 :face icons-in-terminal-lblue)
+    (gfm-mode                           icons-in-terminal-octicon "markdown"        :face icons-in-terminal-blue)
+    (bibtex-mode                        icons-in-terminal-fileicon "bib"            :face icons-in-terminal-maroon)
+    (org-mode                           icons-in-terminal-fileicon "org"            :face icons-in-terminal-lgreen)
+    (compilation-mode                   icons-in-terminal-faicon "cogs"             :v-adjust 0.0 :height 1.0)
+    (objc-mode                          icons-in-terminal-faicon "apple"            :v-adjust 0.0 :height 1.0)
+    (tuareg-mode                        icons-in-terminal-fileicon "ocaml"          :v-adjust 0.0 :height 1.0)
+    (purescript-mode                    icons-in-terminal-fileicon "purescript"     :v-adjust 0.0 :height 1.0)
     ))
 
-(defvar icons-in-terminal-url-spec
+(defvar icons-in-terminal-url-alist
   '(
     ;; Social media and communities
     ("^\\(https?://\\)?\\(www\\.\\)?del\\.icio\\.us" icons-in-terminal-faicon "delicious")
@@ -645,7 +646,7 @@ If SHOW-FAMILY is non-nil, displays the icons family in the candidate string."
 
 (defun icons-in-terminal-icon-family-for-mode (mode)
   "Get the icons font family for MODE."
-  (let ((icon (cdr (assoc mode icons-in-terminal-mode-icon-spec))))
+  (let ((icon (cdr (assoc mode icons-in-terminal-mode-icon-alist))))
     (if icon (funcall (intern (format "%s-family" (car icon)))) nil)))
 
 (defun icons-in-terminal-icon-family-for-buffer ()
@@ -740,8 +741,8 @@ inserting functions."
 ARG-OVERRIDES should be a plist containining `:height',
 `:v-adjust' or `:face' properties like in the normal icon
 inserting functions."
-  (let* ((icon (cdr (or (assoc mode icons-in-terminal-mode-icon-spec)
-                        (assoc (get mode 'derived-mode-parent) icons-in-terminal-mode-icon-spec))))
+  (let* ((icon (cdr (or (assoc mode icons-in-terminal-mode-icon-alist)
+                        (assoc (get mode 'derived-mode-parent) icons-in-terminal-mode-icon-alist))))
          (args (cdr icon)))
     (when arg-overrides (setq args (append `(,(car args)) arg-overrides (cdr args))))
     (if icon (apply (car icon) args) mode)))
@@ -766,7 +767,7 @@ and directory with PADDING.
 Produces different symbols by inspecting DIR to distinguish
 symlinks and git repositories which do not depend on the
 directory contents"
-  (let* ((matcher (icons-in-terminal-match-to-alist (file-name-base (directory-file-name dir)) icons-in-terminal-dir-icon-spec))
+  (let* ((matcher (icons-in-terminal-match-to-alist (file-name-base (directory-file-name dir)) icons-in-terminal-dir-icon-alist))
          (path (expand-file-name dir))
          (chevron (if chevron (icons-in-terminal-octicon (format "chevron-%s" chevron) :height 0.8 :v-adjust -0.1) ""))
          (padding (or padding "\t"))
@@ -783,11 +784,11 @@ directory contents"
 ;;;###autoload
 (defun icons-in-terminal-icon-for-url (url &rest arg-overrides)
   "Get the formatted icon for URL.
-If an icon for URL isn't found in `icons-in-terminal-url-spec', a globe is used.
+If an icon for URL isn't found in `icons-in-terminal-url-alist', a globe is used.
 ARG-OVERRIDES should be a plist containining `:height',
 `:v-adjust' or `:face' properties like in the normal icon
 inserting functions."
-  (let* ((icon (icons-in-terminal-match-to-alist url icons-in-terminal-url-spec))
+  (let* ((icon (icons-in-terminal-match-to-alist url icons-in-terminal-url-alist))
          (args (cdr icon)))
     (unless icon
       (setq icon '(icons-in-terminal-faicon "globe"))
@@ -798,7 +799,7 @@ inserting functions."
 ;;;###autoload
 (defun icons-in-terminal-icon-for-weather (weather)
   "Get an icon for a WEATHER status."
-  (let ((icon (icons-in-terminal-match-to-alist weather icons-in-terminal-weather-icon-spec)))
+  (let ((icon (icons-in-terminal-match-to-alist weather icons-in-terminal-weather-icon-alist)))
     (if icon (apply (car icon) (cdr icon)) weather)))
 
 (memoize 'icons-in-terminal-icon-for-file)
