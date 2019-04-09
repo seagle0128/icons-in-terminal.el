@@ -25,7 +25,8 @@
 
 (defconst icons-in-terminal-alist
   '((fileicon
-     . (("git" . "\xedce")
+     . (;; mfizz
+        ("git" . "\xedce")
         ("html5" . "\xede1")
         ("java" . "\xede4")
         ("javascript" . "\xede7")
@@ -51,12 +52,14 @@
         ("svg" . "\xee25")
         ("apache" . "\xeda9")
 
+        ;; dev
         ("bower" . "\xea54")
         ("swift" . "\xea5c")
         ("atom" . "\xea6b")
         ("google-drive" . "\xea38")
         ("prolog" . "\xeaa8")
 
+        ;; file
         ("regex" . "\xe72d")
         ("arch_linux" . "\xe72e")
         ("e" . "\xe72f")
@@ -1373,9 +1376,8 @@
         ("plus-small" . "\xe0de")
         ("reply" . "\xe0df")
         ("device-desktop" . "\xe0e0")))
-    (weather
-     . (
-        ("day-cloudy-gusts" . "\xe8f5")
+    (wicon
+     . (("day-cloudy-gusts" . "\xe8f5")
         ("day-cloudy-windy" . "\xe8f6")
         ("day-cloudy" . "\xe8f7")
         ("day-fog" . "\xe8f8")

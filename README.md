@@ -10,14 +10,16 @@ icons.
 
 - Install fonts
 
-Refer to [icons-in-terminal](https://github.com/sebastiencs/icons-in-terminal#installation).
+The Resource Font *MUST* be installed first to make the icons work in Emacs.
 
-``` shell
-git clone https://github.com/sebastiencs/icons-in-terminal.git
-cd icons-in-terminal
-./install.sh
-./print_icons.sh
+Run this command to install the necessary font based on the OS:
+
+``` emacs-lisp
+M-x icons-in-terminal-install-font
 ```
+
+For Windows, the font is downloaded into the specified directory to install
+manually.
 
 - Install elisp
 
@@ -44,5 +46,7 @@ For example：
 (icons-in-terminal-icon-for-buffer)
 (icons-in-terminal-icon-for-mode 'emacs-lisp-mode)
 (icons-in-terminal-icon-for-file "template.el")
-
 ```
+
+To display the icons in terminal emulator, set `icons-in-terminal` for Non-ASCII
+font. Not all terminal emulator support this functionality.

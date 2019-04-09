@@ -660,6 +660,36 @@ If SHOW-FAMILY is non-nil, displays the icons family in the candidate string."
 (memoize 'icons-in-terminal-icon-family)
 
 ;;;###autoload
+(defun icons-in-terminal-install-font (&optional pfx)
+  "Helper function to download and install the latests font based on OS.
+When PFX is non-nil, ignore the prompt and just install"
+  (interactive "P")
+  (when (or pfx (yes-or-no-p "This will download and install font, are you sure you want to do this?"))
+    (let* ((font "icons-in-terminal.ttf")
+           (url-format "https://github.com/sebastiencs/icons-in-terminal/raw/master/build/%s")
+           (font-dest (cl-case window-system
+                        (x  (concat (or (getenv "XDG_DATA_HOME")            ;; Default Linux install directories
+                                        (concat (getenv "HOME") "/.local/share"))
+                                    "/fonts/"))
+                        (mac (concat (getenv "HOME") "/Library/Fonts/" ))
+                        (ns (concat (getenv "HOME") "/Library/Fonts/" ))))  ;; Default MacOS install directory
+           (known-dest? (stringp font-dest))
+           (font-dest (or font-dest (read-directory-name "Font installation directory: " "~/"))))
+
+      (unless (file-directory-p font-dest) (mkdir font-dest t))
+
+      (url-copy-file (format url-format font) (expand-file-name font font-dest) t)
+
+      (when known-dest?
+        (message "Font downloaded, updating font cache... <fc-cache -f -v> ")
+        (shell-command-to-string (format "fc-cache -f -v")))
+      (message "%s Successfully %s `%s' to `%s'!"
+               (icons-in-terminal-wicon "stars" :v-adjust 0.0)
+               (if known-dest? "installed" "downloaded")
+               font
+               font-dest))))
+
+;;;###autoload
 (defun icons-in-terminal-insert (&optional arg family)
   "Interactive icon insertion function.
 When Prefix ARG is non-nil, insert the propertized icon.
@@ -827,7 +857,7 @@ FONT-NAME is the name of the .ttf file providing the font, defaults to FAMILY."
 (icons-in-terminal--define-icon fileicon icons-in-terminal-alist/fileicon "icons-in-terminal")
 (icons-in-terminal--define-icon faicon   icons-in-terminal-alist/faicon   "icons-in-terminal")
 (icons-in-terminal--define-icon octicon  icons-in-terminal-alist/octicon  "icons-in-terminal")
-(icons-in-terminal--define-icon weather  icons-in-terminal-alist/weather  "icons-in-terminal")
+(icons-in-terminal--define-icon wicon    icons-in-terminal-alist/wicon    "icons-in-terminal")
 (icons-in-terminal--define-icon material icons-in-terminal-alist/material "icons-in-terminal")
 
 (provide 'icons-in-terminal)
