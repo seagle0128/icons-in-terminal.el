@@ -5,7 +5,7 @@
 ;; Author: Vincent Zhang <seagle0128@gmail.com>
 ;; Created: 2019/04/06
 ;; Version: 0.1.0
-;; Package-Requires: ((emacs "24.4"))
+;; Package-Requires: ((emacs "24.4") (memoize "1.0.1"))
 ;; URL:
 ;; Keywords: convenience
 
@@ -43,6 +43,7 @@
 (require 'cl-lib)
 (require 'icons-in-terminal-data)
 (require 'icons-in-terminal-faces)
+(require 'memoize)
 
 ;;; Custom Variables
 
@@ -650,6 +651,10 @@ If SHOW-FAMILY is non-nil, displays the icons family in the candidate string."
   "Get a propertized ICON family programatically."
   (plist-get (get-text-property 0 'face icon) :family))
 
+(memoize 'icons-in-terminal-icon-family-for-file)
+(memoize 'icons-in-terminal-icon-family-for-mode)
+(memoize 'icons-in-terminal-icon-family)
+
 ;;;###autoload
 (defun icons-in-terminal-insert (&optional arg family)
   "Interactive icon insertion function.
@@ -760,6 +765,10 @@ inserting functions."
   "Get an icon for a WEATHER status."
   (let ((icon (icons-in-terminal-match-to-alist weather icons-in-terminal-weather-icon-spec)))
     (if icon (apply (car icon) (cdr icon)) weather)))
+
+(memoize 'icons-in-terminal-icon-for-file)
+(memoize 'icons-in-terminal-icon-for-mode)
+(memoize 'icons-in-terminal-icon-for-url)
 
 ;;; Initialize
 
