@@ -176,6 +176,7 @@
     ("\\.pony$"         icons-in-terminal-fileicon "pony"                   :face icons-in-terminal-maroon)
     ("\\.prol?o?g?$"    icons-in-terminal-fileicon "prolog"                 :height 1.1  :face icons-in-terminal-lmaroon)
     ("\\.py$"           icons-in-terminal-fileicon "python"                 :height 1.0  :face icons-in-terminal-dblue)
+    ("_?test\\.py$"     icons-in-terminal-fileicon "test-python"            :height 1.0 :v-adjust 0.0 :face icons-in-terminal-red)
     ("\\.ipynb"         icons-in-terminal-fileicon "jupyter"                :height 1.2 :face icons-in-terminal-orange)
 
     ("\\.rkt$"          icons-in-terminal-fileicon "racket"                 :height 1.2 :face icons-in-terminal-red)
