@@ -710,7 +710,6 @@ When FAMILY is non-nil, limit the candidates to the icon set matching it."
 
     (if arg (prin1 result) (insert result))))
 
-;;;###autoload
 (defun icons-in-terminal--icon-info-for-buffer (&optional f)
   "Get icon info for the current buffer.
 
