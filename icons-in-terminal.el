@@ -719,9 +719,9 @@ When F is provided, the info function is calculated with the format
   (let* ((base-f (concat "icons-in-terminal-icon" (when f (format "-%s" f))))
          (file-f (intern (concat base-f "-for-file")))
          (mode-f (intern (concat base-f "-for-mode"))))
-    (if (and (buffer-file-name)
-             (icons-in-terminal-auto-mode-match?))
-        (funcall file-f (file-name-nondirectory (buffer-file-name)))
+    (if (and buffer-file-name
+             (icons-in-terminal-match-to-alist buffer-file-name icons-in-terminal-icon-alist))
+        (funcall file-f (file-name-nondirectory buffer-file-name))
       (funcall mode-f major-mode))))
 
 ;;;###autoload
