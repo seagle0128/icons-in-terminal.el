@@ -105,6 +105,7 @@
         ("bib" . "\xe756")
         ("bibtex" . "\xe756")
         ("mustache" . "\xe757")
+        ("moustache" . "\xe757")
         ("gulp" . "\xe758")
         ("grunt" . "\xe759")
         ("ember" . "\xe75a")

@@ -1,4 +1,4 @@
-;;; icons-in-terminal-faces.el --- A module of faces for nerd-icons
+;;; icons-in-terminal-faces.el --- A module of faces for icons-in-terminal
 
 ;; Copyright (C) 2019 Vincent Zhang <seagle0128@gmail.com>
 
@@ -25,7 +25,7 @@
   "Manage how All The Icons icons are coloured and themed."
   :prefix "icons-in-terminal-"
   :group 'tools
-  :group 'nerd-icons)
+  :group 'icons-in-terminal)
 
 
 ;; red
