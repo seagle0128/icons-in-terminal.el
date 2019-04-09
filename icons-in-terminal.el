@@ -647,6 +647,10 @@ If SHOW-FAMILY is non-nil, displays the icons family in the candidate string."
   (let ((icon (cdr (assoc mode icons-in-terminal-mode-icon-spec))))
     (if icon (funcall (intern (format "%s-family" (car icon)))) nil)))
 
+(defun icons-in-terminal-icon-family-for-buffer ()
+  "Get the icon font family for the current buffer."
+  (icons-in-terminal--icon-info-for-buffer "family"))
+
 (defun icons-in-terminal-icon-family (icon)
   "Get a propertized ICON family programatically."
   (plist-get (get-text-property 0 'face icon) :family))
