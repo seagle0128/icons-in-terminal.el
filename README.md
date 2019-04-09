@@ -8,9 +8,27 @@ icons.
 
 ## Installation
 
-- Install fonts
+### Install fonts
 
 The Resource Font *MUST* be installed first to make the icons work in Emacs.
+
+To display the icons in terminal emulator, set `icons-in-terminal` for Non-ASCII
+font. *NOTE*: Not all terminal emulator support this functionality. Refer to
+[icons-in-terminal](https://github.com/sebastiencs/icons-in-terminal) for details.
+
+- Linux/Unix:
+
+Refer to [Installing icons-in-terminal
+font](https://github.com/sebastiencs/icons-in-terminal#installation).
+
+``` shell
+git clone https://github.com/sebastiencs/icons-in-terminal.git
+cd icons-in-terminal
+./install.sh
+./print_icons.sh
+```
+
+- macOS/Windows
 
 Run this command to install the necessary font based on the OS:
 
@@ -18,10 +36,10 @@ Run this command to install the necessary font based on the OS:
 M-x icons-in-terminal-install-font
 ```
 
-For Windows, the font is downloaded into the specified directory to install
+For Windows, the font is downloaded to the specified directory for installing
 manually.
 
-- Install elisp
+### Install elisp
 
 ``` shell
 git clone https://github.com/seagle0128/icons-in-terminal.el
@@ -47,6 +65,3 @@ For example：
 (icons-in-terminal-icon-for-mode 'emacs-lisp-mode)
 (icons-in-terminal-icon-for-file "template.el")
 ```
-
-To display the icons in terminal emulator, set `icons-in-terminal` for Non-ASCII
-font. Not all terminal emulator support this functionality.
