@@ -1,0 +1,5 @@
+.DS_Store
+*.elc
+*.html
+.cask/
+dist/
