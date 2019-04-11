@@ -316,7 +316,7 @@
     ("^\\*new-tab\\*$"  icons-in-terminal-material "star"                   :face icons-in-terminal-cyan)
 
     ("^\\."             icons-in-terminal-octicon "gear"                    :v-adjust 0.0)
-    ("."                icons-in-terminal-faicon "file-o"                   :height 0.8 :v-adjust 0.0 :face icons-in-terminal-lsilver)))
+    ("."                icons-in-terminal-faicon "file-o"                   :height 0.8 :v-adjust 0.0 :face icons-in-terminal-dsilver)))
 
 (defvar icons-in-terminal-dir-icon-alist
   '(
