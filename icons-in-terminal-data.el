@@ -52,6 +52,7 @@
         ("d3" . "\xedbd")
         ("svg" . "\xee25")
         ("apache" . "\xeda9")
+        ("script" . "\xee1d")
 
         ;; dev
         ("bower" . "\xea54")
