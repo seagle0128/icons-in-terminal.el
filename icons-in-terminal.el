@@ -661,6 +661,26 @@ If SHOW-FAMILY is non-nil, displays the icons family in the candidate string."
 (memoize 'icons-in-terminal-icon-family-for-mode)
 (memoize 'icons-in-terminal-icon-family)
 
+(defun icons-in-terminal--web-mode-icon (&rest arg-overrides) "Get icon for a `web-mode' buffer with ARG-OVERRIDES." (icons-in-terminal--web-mode nil arg-overrides))
+(defun icons-in-terminal--web-mode-icon-family () "Get icon family for a `web-mode' buffer." (icons-in-terminal--web-mode t))
+(defun icons-in-terminal--web-mode (&optional family arg-overrides)
+  "Return icon or FAMILY for `web-mode' based on `web-mode-content-type'.
+Providing ARG-OVERRIDES will modify the creation of the icon."
+  (let ((non-nil-args (cl-reduce (lambda (acc it) (if it (append acc (list it)) acc)) arg-overrides :initial-value '())))
+    (cond
+     ((equal web-mode-content-type "jsx")
+      (if family (icons-in-terminal-fileicon-family) (apply 'icons-in-terminal-fileicon (append '("jsx-2") non-nil-args))))
+     ((equal web-mode-content-type "javascript")
+      (if family (icons-in-terminal-alltheicon-family) (apply 'icons-in-terminal-alltheicon (append '("javascript") non-nil-args))))
+     ((equal web-mode-content-type "json")
+      (if family (icons-in-terminal-alltheicon-family) (apply 'icons-in-terminal-alltheicon (append '("less") non-nil-args))))
+     ((equal web-mode-content-type "xml")
+      (if family (icons-in-terminal-faicon-family) (apply 'icons-in-terminal-faicon (append '("file-code-o") non-nil-args))))
+     ((equal web-mode-content-type "css")
+      (if family (icons-in-terminal-alltheicon-family) (apply 'icons-in-terminal-alltheicon (append '("css3") non-nil-args))))
+     (t
+      (if family (icons-in-terminal-alltheicon-family) (apply 'icons-in-terminal-alltheicon (append '("html5") non-nil-args)))))))
+
 ;;;###autoload
 (defun icons-in-terminal-install-font (&optional pfx)
   "Helper function to download and install the latests font based on OS.
