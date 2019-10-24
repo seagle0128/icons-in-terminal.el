@@ -158,7 +158,7 @@
     ("\\.java$"         icons-in-terminal-fileicon "java"                   :height 1.0  :face icons-in-terminal-purple)
 
     ("\\.go$"           icons-in-terminal-fileicon "go"                     :height 1.0  :face icons-in-terminal-blue)
-
+    ("\\.lua$"          icons-in-terminal-faicon   "lua"                    :face all-the-icons-dblue)
     ("\\.mp3$"          icons-in-terminal-faicon "volume-up"                :face icons-in-terminal-dred)
     ("\\.wav$"          icons-in-terminal-faicon "volume-up"                :face icons-in-terminal-dred)
     ("\\.m4a$"          icons-in-terminal-faicon "volume-up"                :face icons-in-terminal-dred)
@@ -439,6 +439,7 @@
     (elixir-mode                        icons-in-terminal-fileicon "elixir"         :face icons-in-terminal-lorange :v-adjust -0.1 :height 0.9)
     (java-mode                          icons-in-terminal-fileicon "java"           :height 1.0  :face icons-in-terminal-purple)
     (go-mode                            icons-in-terminal-fileicon "go"             :height 1.0  :face icons-in-terminal-blue)
+    (lua-mode                           icons-in-terminal-faicon   "lua"            :face all-the-icons-dblue)
     (matlab-mode                        icons-in-terminal-fileicon "matlab"         :face icons-in-terminal-orange)
     (perl-mode                          icons-in-terminal-fileicon "perl"           :face icons-in-terminal-lorange)
     (cperl-mode                         icons-in-terminal-fileicon "perl"           :face icons-in-terminal-lorange)
