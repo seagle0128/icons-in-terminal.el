@@ -234,7 +234,7 @@
     ("\\.el$"           icons-in-terminal-fileicon "elisp"                  :height 1.0 :v-adjust -0.2 :face icons-in-terminal-purple)
 
     ;; Stylesheeting
-    ("\\.css$"          icons-in-terminal-fileicon "css3"                   :face icons-in-terminal-yellow)
+    ("\\.css$"          icons-in-terminal-faicon "css3"                     :face icons-in-terminal-yellow)
     ("\\.scss$"         icons-in-terminal-fileicon "sass"                   :face icons-in-terminal-pink)
     ("\\.sass$"         icons-in-terminal-fileicon "sass"                   :face icons-in-terminal-dpink)
     ("\\.less$"         icons-in-terminal-fileicon "less"                   :height 0.8  :face icons-in-terminal-dyellow)
@@ -778,7 +778,7 @@ icon."
   (icons-in-terminal--icon-info-for-buffer))
 
 ;;;###autoload
-(defun icons-in-terminal-icon-for-dir (dir &optional chevron padding)
+(defun icons-in-terminal-icon-for-dir-with-chevron (dir &optional chevron padding)
   "Format an icon for DIR with CHEVRON similar to tree based directories.
 
 If PADDING is provided, it will prepend and separate the chevron
@@ -787,19 +787,32 @@ and directory with PADDING.
 Produces different symbols by inspecting DIR to distinguish
 symlinks and git repositories which do not depend on the
 directory contents"
-  (let* ((matcher (icons-in-terminal-match-to-alist (file-name-base (directory-file-name dir)) icons-in-terminal-dir-icon-alist))
-         (path (expand-file-name dir))
-         (chevron (if chevron (icons-in-terminal-octicon (format "chevron-%s" chevron) :height 0.8 :v-adjust -0.1) ""))
-         (padding (or padding "\t"))
-         (icon (cond
-                ((file-symlink-p path)
-                 (icons-in-terminal-octicon "file-symlink-directory" :height 1.0))
-                ((icons-in-terminal-dir-is-submodule path)
-                 (icons-in-terminal-octicon "file-submodule" :height 1.0))
-                ((file-exists-p (format "%s/.git" path))
-                 (format "%s" (icons-in-terminal-octicon "repo" :height 1.1)))
-                (t (apply (car matcher) (cdr matcher))))))
+  (let ((icon (icons-in-terminal-icon-for-dir dir))
+        (chevron (if chevron (icons-in-terminal-octicon (format "chevron-%s" chevron) :height 0.8 :v-adjust -0.1) ""))
+        (padding (or padding "\t")))
     (format "%s%s%s%s%s" padding chevron padding icon padding)))
+
+;;;###autoload
+(defun icons-in-terminal-icon-for-dir (dir &rest arg-overrides)
+  "Get the formatted icon for DIR.
+ARG-OVERRIDES should be a plist containining `:height',
+`:v-adjust' or `:face' properties like in the normal icon
+inserting functions.
+
+Note: You want chevron, please use `icons-in-terminal-icon-for-dir-with-chevron'."
+  (let* ((dirname (file-name-base (directory-file-name dir)))
+         (path (expand-file-name dir))
+         (icon (icons-in-terminal-match-to-alist dirname icons-in-terminal-dir-icon-alist))
+         (args (cdr icon)))
+    (when arg-overrides (setq args (append `(,(car args)) arg-overrides (cdr args))))
+    (cond
+     ((file-symlink-p path)
+      (apply #'icons-in-terminal-octicon "file-symlink-directory" (cdr args)))
+     ((icons-in-terminal-dir-is-submodule path)
+      (apply #'icons-in-terminal-octicon "file-submodule" (cdr args)))
+     ((file-exists-p (format "%s/.git" path))
+      (apply #'icons-in-terminal-octicon "repo" (cdr args)))
+     (t (apply (car icon) args)))))
 
 ;;;###autoload
 (defun icons-in-terminal-icon-for-url (url &rest arg-overrides)
