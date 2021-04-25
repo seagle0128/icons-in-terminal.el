@@ -234,7 +234,7 @@
     ("\\.el$"           icons-in-terminal-fileicon "elisp"                  :height 1.0 :v-adjust -0.2 :face icons-in-terminal-purple)
 
     ;; Stylesheeting
-    ("\\.css$"          icons-in-terminal-fileicon "css3"                   :face icons-in-terminal-yellow)
+    ("\\.css$"          icons-in-terminal-faicon "css3"                     :face icons-in-terminal-yellow)
     ("\\.scss$"         icons-in-terminal-fileicon "sass"                   :face icons-in-terminal-pink)
     ("\\.sass$"         icons-in-terminal-fileicon "sass"                   :face icons-in-terminal-dpink)
     ("\\.less$"         icons-in-terminal-fileicon "less"                   :height 0.8  :face icons-in-terminal-dyellow)
