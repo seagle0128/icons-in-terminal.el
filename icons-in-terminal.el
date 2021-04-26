@@ -97,7 +97,6 @@
     ("\\.bashrc$"       icons-in-terminal-fileicon "script"                 :height 0.9  :face icons-in-terminal-dpink)
     ("\\.bowerrc$"      icons-in-terminal-fileicon "bower"                  :height 1.0 :v-adjust 0.0 :face icons-in-terminal-silver)
     ("^bower.json$"     icons-in-terminal-fileicon "bower"                  :height 1.0 :v-adjust 0.0 :face icons-in-terminal-lorange)
-    ("\\.ini$"          icons-in-terminal-octicon "settings"                :v-adjust 0.0 :face icons-in-terminal-yellow)
     ("\\.eslintignore"  icons-in-terminal-fileicon "eslint"                 :height 0.9  :face icons-in-terminal-purple)
     ("\\.eslint"        icons-in-terminal-fileicon "eslint"                 :height 0.9  :face icons-in-terminal-lpurple)
     ("\\.git"           icons-in-terminal-fileicon "git"                    :height 1.0 :face icons-in-terminal-lred)
@@ -105,6 +104,9 @@
     ("apache"           icons-in-terminal-fileicon "apache"                 :height 0.9  :face icons-in-terminal-dgreen)
     ("^Makefile$"       icons-in-terminal-fileicon "gnu"                    :face icons-in-terminal-dorange)
     ("\\.mk$"           icons-in-terminal-fileicon "gnu"                    :face icons-in-terminal-dorange)
+    ("^CMakeLists.txt$" icons-in-terminal-fileicon "cmake"                  :face icons-in-terminal-red)
+    ("^CMakeCache.txt$" icons-in-terminal-fileicon "cmake"                  :face icons-in-terminal-blue)
+    ("\\.cmake$"        icons-in-terminal-fileicon "cmake"                  :face icons-in-terminal-red)
 
     ("\\.dockerignore$" icons-in-terminal-fileicon "dockerfile"             :height 1.2  :face icons-in-terminal-dblue)
     ("^\\.?Dockerfile"  icons-in-terminal-fileicon "dockerfile"             :face icons-in-terminal-blue)
@@ -121,8 +123,10 @@
 
 
     ("^serverless\\.yml$" icons-in-terminal-faicon "bolt"                   :v-adjust 0.0 :face icons-in-terminal-yellow)
+    ("\\.ini$"          icons-in-terminal-octicon "settings"                :v-adjust 0.0 :face icons-in-terminal-yellow)
     ("\\.[jc]son$"      icons-in-terminal-octicon "settings"                :v-adjust 0.0 :face icons-in-terminal-yellow)
     ("\\.ya?ml$"        icons-in-terminal-octicon "settings"                :v-adjust 0.0 :face icons-in-terminal-dyellow)
+    ("\\.toml$"         icons-in-terminal-octicon "settings"                :v-adjust 0.0 :face icons-in-terminal-dyellow)
 
     ("\\.pkg$"          icons-in-terminal-octicon "package"                 :v-adjust 0.0 :face icons-in-terminal-dsilver)
     ("\\.rpm$"          icons-in-terminal-octicon "package"                 :v-adjust 0.0 :face icons-in-terminal-dsilver)
@@ -151,6 +155,7 @@
     ("\\.hrl$"          icons-in-terminal-fileicon "erlang"                 :face icons-in-terminal-dred :v-adjust -0.1 :height 0.9)
 
     ("\\.eex$"          icons-in-terminal-fileicon "elixir"                 :face icons-in-terminal-lorange :v-adjust -0.1 :height 0.9)
+    ("\\.leex$"         icons-in-terminal-fileicon "elixir"                 :face icons-in-terminal-lorange :v-adjust -0.1 :height 0.9)
     ("\\.ex$"           icons-in-terminal-fileicon "elixir"                 :face icons-in-terminal-lpurple :v-adjust -0.1 :height 0.9)
     ("\\.exs$"          icons-in-terminal-fileicon "elixir"                 :face icons-in-terminal-lred :v-adjust -0.1 :height 0.9)
     ("^mix.lock$"       icons-in-terminal-fileicon "elixir"                 :face icons-in-terminal-lyellow :v-adjust -0.1 :height 0.9)
@@ -158,10 +163,15 @@
     ("\\.java$"         icons-in-terminal-fileicon "java"                   :height 1.0  :face icons-in-terminal-purple)
 
     ("\\.go$"           icons-in-terminal-fileicon "go"                     :height 1.0  :face icons-in-terminal-blue)
-    ("\\.lua$"          icons-in-terminal-faicon   "lua"                    :face all-the-icons-dblue)
+
     ("\\.mp3$"          icons-in-terminal-faicon "volume-up"                :face icons-in-terminal-dred)
     ("\\.wav$"          icons-in-terminal-faicon "volume-up"                :face icons-in-terminal-dred)
     ("\\.m4a$"          icons-in-terminal-faicon "volume-up"                :face icons-in-terminal-dred)
+    ("\\.ogg$"          icons-in-terminal-faicon "volume-up"                :face icons-in-terminal-dred)
+    ("\\.flac$"         icons-in-terminal-faicon "volume-up"                :face icons-in-terminal-dred)
+    ("\\.opus$"         icons-in-terminal-faicon "volume-up"                :face icons-in-terminal-dred)
+    ("\\.au$"           icons-in-terminal-faicon "volume-up"                :face icons-in-terminal-dred)
+    ("\\.aif[fc]?$"     icons-in-terminal-faicon "volume-up"                :face icons-in-terminal-dred)
 
     ("\\.jl$"           icons-in-terminal-fileicon "julia"                  :v-adjust 0.0 :face icons-in-terminal-purple)
     ("\\.matlab$"       icons-in-terminal-fileicon "matlab"                 :face icons-in-terminal-orange)
@@ -170,19 +180,24 @@
 
     ("\\.p[ml]$"        icons-in-terminal-fileicon "perl"                   :face icons-in-terminal-lorange)
     ("\\.pl6$"          icons-in-terminal-fileicon "perl6"                  :face icons-in-terminal-cyan)
+    ("\\.pm6$"          icons-in-terminal-fileicon "perl6"                  :face icons-in-terminal-pink)
     ("\\.pod$"          icons-in-terminal-fileicon "perldocs"               :height 1.2  :face icons-in-terminal-lgreen)
 
     ("\\.php$"          icons-in-terminal-fileicon "php"                    :face icons-in-terminal-lsilver)
     ("\\.pony$"         icons-in-terminal-fileicon "pony"                   :face icons-in-terminal-maroon)
+    ("\\.ps1$"          icons-in-terminal-fileicon "powershell"             :face icons-in-terminal-blue)
     ("\\.prol?o?g?$"    icons-in-terminal-fileicon "prolog"                 :height 1.1  :face icons-in-terminal-lmaroon)
     ("\\.py$"           icons-in-terminal-fileicon "python"                 :height 1.0  :face icons-in-terminal-dblue)
-    ("_?test\\.py$"     icons-in-terminal-fileicon "test-python"            :height 1.0 :v-adjust 0.0 :face icons-in-terminal-red)
     ("\\.ipynb"         icons-in-terminal-fileicon "jupyter"                :height 1.2 :face icons-in-terminal-orange)
+    ("_?test\\.py$"     icons-in-terminal-fileicon "test-python"            :height 1.0 :v-adjust 0.0 :face icons-in-terminal-red)
 
     ("\\.rkt$"          icons-in-terminal-fileicon "racket"                 :height 1.2 :face icons-in-terminal-red)
+    ("^Gemfile\\(\\.lock\\)?$" icons-in-terminal-fileicon "ruby-alt"        :face icons-in-terminal-red)
     ("\\.gem$"          icons-in-terminal-fileicon "ruby-alt"               :face icons-in-terminal-red)
     ("_?test\\.rb$"        icons-in-terminal-fileicon "test-ruby"           :height 1.0 :v-adjust 0.0 :face icons-in-terminal-red)
     ("_?test_helper\\.rb$" icons-in-terminal-fileicon "test-ruby"           :height 1.0 :v-adjust 0.0 :face icons-in-terminal-dred)
+    ("_?spec\\.rb$"        icons-in-terminal-fileicon "test-ruby"            :height 1.0 :v-adjust 0.0 :face icons-in-terminal-red)
+    ("_?spec_helper\\.rb$" icons-in-terminal-fileicon "test-ruby"            :height 1.0 :v-adjust 0.0 :face icons-in-terminal-dred)
     ("\\.rb$"           icons-in-terminal-fileicon "ruby"                   :v-adjust 0.0 :face icons-in-terminal-lred)
     ("\\.rs$"           icons-in-terminal-fileicon "rust"                   :height 1.2  :face icons-in-terminal-maroon)
     ("\\.rlib$"         icons-in-terminal-fileicon "rust"                   :height 1.2  :face icons-in-terminal-dmaroon)
@@ -203,7 +218,73 @@
     ("-?spec\\."        icons-in-terminal-fileicon "test-generic"           :height 1.0 :v-adjust 0.0 :face icons-in-terminal-dgreen)
     ("-?test\\."        icons-in-terminal-fileicon "test-generic"           :height 1.0 :v-adjust 0.0 :face icons-in-terminal-dgreen)
 
+    ("\\.tcl$"          icons-in-terminal-fileicon "tcl"                    :height 1.0 :face icons-in-terminal-dred)
+
     ("\\.tf\\(vars\\|state\\)?$" icons-in-terminal-fileicon "terraform"     :height 1.0 :face icons-in-terminal-purple-alt)
+
+    ("\\.asm$"          icons-in-terminal-faicon "microchip"                :height 1.0 :face icons-in-terminal-blue)
+
+    ;; Verilog(-AMS) and SystemVerilog(-AMS)
+    ("\\.v$"            icons-in-terminal-fileicon "verilog"               :height 1.0 :v-adjust -0.2 :face icons-in-terminal-red)
+    ("\\.vams$"         icons-in-terminal-fileicon "verilog"               :height 1.0 :v-adjust -0.2 :face icons-in-terminal-red)
+    ("\\.sv$"           icons-in-terminal-fileicon "sysverilog"            :height 1.0 :v-adjust -0.2 :face icons-in-terminal-red)
+    ("\\.sva$"          icons-in-terminal-fileicon "sysverilog"            :height 1.0 :v-adjust -0.2 :face icons-in-terminal-red)
+    ("\\.svh$"          icons-in-terminal-fileicon "sysverilog"            :height 1.0 :v-adjust -0.2 :face icons-in-terminal-red)
+    ("\\.svams$"        icons-in-terminal-fileicon "sysverilog"            :height 1.0 :v-adjust -0.2 :face icons-in-terminal-red)
+
+    ;; VHDL(-AMS)
+    ("\\.vhd$"          icons-in-terminal-fileicon "vhdl"                  :face icons-in-terminal-blue)
+    ("\\.vhdl$"         icons-in-terminal-fileicon "vhdl"                  :face icons-in-terminal-blue)
+    ("\\.vhms$"         icons-in-terminal-fileicon "vhdl"                  :face icons-in-terminal-blue)
+
+    ;; Cabal
+    ("\\.cabal$"        icons-in-terminal-fileicon "cabal"                 :face icons-in-terminal-lblue)
+
+    ;; Kotlin
+    ("\\.kt$"           icons-in-terminal-fileicon "kotlin"                :face icons-in-terminal-orange)
+    ("\\.kts$"          icons-in-terminal-fileicon "kotlin"                :face icons-in-terminal-orange)
+
+    ;; Nimrod
+    ("\\.nim$"          icons-in-terminal-fileicon "nimrod"                :face icons-in-terminal-yellow)
+    ("\\.nims$"         icons-in-terminal-fileicon "nimrod"                :face icons-in-terminal-yellow)
+
+    ;; SQL
+    ("\\.sql$"          icons-in-terminal-octicon "database"               :face icons-in-terminal-silver)
+
+    ;; Styles
+    ("\\.styles$"       icons-in-terminal-material "style"                 :face icons-in-terminal-red)
+
+    ;; Lua
+    ("\\.lua$"          icons-in-terminal-fileicon "lua"                   :face icons-in-terminal-dblue)
+
+    ;; ASCII doc
+    ("\\.adoc$"         icons-in-terminal-fileicon "asciidoc"              :face icons-in-terminal-lblue)
+    ("\\.asciidoc$"     icons-in-terminal-fileicon "asciidoc"              :face icons-in-terminal-lblue)
+
+    ;; Puppet
+    ("\\.pp$"           icons-in-terminal-fileicon "puppet"                :face icons-in-terminal-yellow)
+
+    ;; Jinja
+    ("\\.j2$"           icons-in-terminal-fileicon "jinja"                 :face icons-in-terminal-silver)
+    ("\\.jinja2$"       icons-in-terminal-fileicon "jinja"                 :face icons-in-terminal-silver)
+
+    ;; Docker
+    ("\\.dockerfile$"   icons-in-terminal-fileicon "dockerfile"            :face icons-in-terminal-cyan)
+
+    ;; Vagrant
+    ("\\.vagrantfile$"  icons-in-terminal-fileicon "vagrant"               :face icons-in-terminal-blue)
+
+    ;; GLSL - Missing
+    ;; ("\\.glsl$"          icons-in-terminal-fileicon "vertex-shader"         :face icons-in-terminal-blue)
+    ;; ("\\.vert$"          icons-in-terminal-fileicon "vertex-shader"         :face icons-in-terminal-blue)
+    ;; ("\\.tesc$"          icons-in-terminal-fileicon "vertex-shader"         :face icons-in-terminal-purple)
+    ;; ("\\.tese$"          icons-in-terminal-fileicon "vertex-shader"         :face icons-in-terminal-dpurple)
+    ;; ("\\.geom$"          icons-in-terminal-fileicon "vertex-shader"         :face icons-in-terminal-green)
+    ;; ("\\.frag$"          icons-in-terminal-fileicon "vertex-shader"         :face icons-in-terminal-red)
+    ;; ("\\.comp$"          icons-in-terminal-fileicon "vertex-shader"         :face icons-in-terminal-dblue)
+
+    ;; CUDA
+    ("\\.cuh?$"         icons-in-terminal-fileicon "nvidia"                :face icons-in-terminal-green)
 
     ;; There seems to be a a bug with this font icon which does not
     ;; let you propertise it without it reverting to being a lower
@@ -245,6 +326,9 @@
     ("\\.csv$"          icons-in-terminal-octicon "graph"                   :v-adjust 0.0 :face icons-in-terminal-dblue)
 
     ("\\.hs$"           icons-in-terminal-fileicon "haskell"                :height 1.0  :face icons-in-terminal-red)
+    ("\\.chs$"          icons-in-terminal-fileicon "haskell"                :height 1.0  :face icons-in-terminal-red)
+    ("\\.lhs$"          icons-in-terminal-fileicon "haskell"                :height 1.0  :face icons-in-terminal-red)
+    ("\\.hsc$"          icons-in-terminal-fileicon "haskell"                :height 1.0  :face icons-in-terminal-red)
 
     ;; Web modes
     ("\\.inky-haml$"    icons-in-terminal-fileicon "haml"                   :face icons-in-terminal-lyellow)
@@ -273,23 +357,37 @@
     ("\\.react"         icons-in-terminal-fileicon "react"                  :height 1.1  :face icons-in-terminal-lblue)
     ("\\.d\\.ts$"       icons-in-terminal-fileicon "typescript"             :height 1.0 :v-adjust -0.1 :face icons-in-terminal-cyan-alt)
     ("\\.ts$"           icons-in-terminal-fileicon "typescript"             :height 1.0 :v-adjust -0.1 :face icons-in-terminal-blue-alt)
+    ("\\.tsx$"          icons-in-terminal-fileicon "typescript"             :height 1.0 :v-adjust -0.1 :face icons-in-terminal-blue-alt)
     ("\\.js$"           icons-in-terminal-fileicon "javascript"             :height 1.0 :v-adjust 0.0 :face icons-in-terminal-yellow)
     ("\\.es[0-9]$"      icons-in-terminal-fileicon "javascript"             :height 1.0 :v-adjust 0.0 :face icons-in-terminal-yellow)
     ("\\.jsx$"          icons-in-terminal-fileicon "jsx-2"                  :height 1.0 :v-adjust -0.1 :face icons-in-terminal-cyan-alt)
     ("\\.njs$"          icons-in-terminal-fileicon "nodejs"                 :height 1.2  :face icons-in-terminal-lgreen)
     ("\\.vue$"          icons-in-terminal-fileicon "vue"                    :face icons-in-terminal-lgreen)
+    ("\\.ejs$"          icons-in-terminal-fileicon "ejs"                    :face icons-in-terminal-red)
+
+    ;; F# - Missing
+    ;; ("\\.fs[ix]?$"      all-the-icons-fileicon "fsharp"                 :face all-the-icons-blue-alt)
+
+    ;; zig - Missing
+    ;; ("\\.zig$"          all-the-icons-fileicon "zig"                    :face all-the-icons-orange)
 
     ;; File Types
     ("\\.ico$"          icons-in-terminal-octicon "file-media"              :v-adjust 0.0 :face icons-in-terminal-blue)
     ("\\.png$"          icons-in-terminal-octicon "file-media"              :v-adjust 0.0 :face icons-in-terminal-orange)
     ("\\.gif$"          icons-in-terminal-octicon "file-media"              :v-adjust 0.0 :face icons-in-terminal-green)
     ("\\.jpe?g$"        icons-in-terminal-octicon "file-media"              :v-adjust 0.0 :face icons-in-terminal-dblue)
+    ("\\.cr2$"          icons-in-terminal-octicon "file-media"              :v-adjust 0.0 :face icons-in-terminal-dblue)
     ("\\.svg$"          icons-in-terminal-fileicon "svg"                    :height 0.9  :face icons-in-terminal-lgreen)
 
     ;; Video
     ("\\.mov"           icons-in-terminal-faicon "film"                     :face icons-in-terminal-blue)
     ("\\.mp4"           icons-in-terminal-faicon "film"                     :face icons-in-terminal-blue)
+    ("\\.m4v$"          icons-in-terminal-faicon "film"                     :face icons-in-terminal-blue)
+    ("\\.mpe?g$"        icons-in-terminal-faicon "film"                     :face icons-in-terminal-blue)
+    ("\\.flv$"          icons-in-terminal-faicon "film"                     :face icons-in-terminal-blue)
     ("\\.ogv"           icons-in-terminal-faicon "film"                     :face icons-in-terminal-dblue)
+    ("\\.mkv$"          icons-in-terminal-faicon "film"                     :face icons-in-terminal-blue)
+    ("\\.webm$"         icons-in-terminal-faicon "film"                     :face icons-in-terminal-blue)
 
     ;; Fonts
     ("\\.ttf$"          icons-in-terminal-fileicon "font"                   :v-adjust 0.0 :face icons-in-terminal-dcyan)
@@ -300,13 +398,19 @@
     ("\\.te?xt"         icons-in-terminal-octicon "file-text"               :v-adjust 0.0 :face icons-in-terminal-cyan)
     ("\\.doc[xm]?$"     icons-in-terminal-fileicon "word"                   :face icons-in-terminal-blue)
     ("\\.texi?$"        icons-in-terminal-fileicon "tex"                    :face icons-in-terminal-lred)
-    ("\\.md$"           icons-in-terminal-octicon "markdown"                :v-adjust 0.0 :face icons-in-terminal-lblue)
+    ("\\.r?md$"         icons-in-terminal-octicon "markdown"                :v-adjust 0.0 :face icons-in-terminal-lblue)
     ("\\.bib$"          icons-in-terminal-fileicon "bib"                    :face icons-in-terminal-maroon)
     ("\\.org$"          icons-in-terminal-fileicon "org"                    :face icons-in-terminal-lgreen)
 
     ("\\.pp[st]$"       icons-in-terminal-fileicon "powerpoint"             :face icons-in-terminal-orange)
     ("\\.pp[st]x$"      icons-in-terminal-fileicon "powerpoint"             :face icons-in-terminal-red)
     ("\\.knt$"          icons-in-terminal-fileicon "powerpoint"             :face icons-in-terminal-cyan)
+
+    ("\\.xlsx$"         icons-in-terminal-fileicon "excel"                  :face icons-in-terminal-dgreen)
+    ("\\.xlsm$"         icons-in-terminal-fileicon "excel"                  :face icons-in-terminal-dgreen)
+    ("\\.xlsb$"         icons-in-terminal-fileicon "excel"                  :face icons-in-terminal-dgreen)
+    ("\\.xltx$"         icons-in-terminal-fileicon "excel"                  :face icons-in-terminal-dgreen)
+    ("\\.xltm$"         icons-in-terminal-fileicon "excel"                  :face icons-in-terminal-dgreen)
 
     ("bookmark"         icons-in-terminal-octicon "bookmark"                :height 1.1 :v-adjust 0.0 :face icons-in-terminal-lpink)
     ("\\.cache$"        icons-in-terminal-octicon "database"                :height 1.0 :v-adjust 0.0 :face icons-in-terminal-green)
@@ -375,6 +479,8 @@
 (defvar icons-in-terminal-mode-icon-alist
   '(
     (emacs-lisp-mode           icons-in-terminal-fileicon "elisp"              :height 1.0 :v-adjust -0.2 :face icons-in-terminal-purple)
+    (circe-server-mode         icons-in-terminal-faicon "commenting-o"         :height 1.0 :v-adjust 0.0)
+    (circe-channel-mode        icons-in-terminal-faicon "commenting-o"         :height 1.0 :v-adjust 0.0)
     (erc-mode                  icons-in-terminal-faicon "commenting-o"         :height 1.0 :v-adjust 0.0)
     (inferior-emacs-lisp-mode  icons-in-terminal-fileicon "elisp"              :height 1.0 :v-adjust -0.2 :face icons-in-terminal-lblue)
     (dired-mode                icons-in-terminal-octicon "file-directory"      :v-adjust 0.0)
@@ -389,6 +495,7 @@
     (js3-mode                  icons-in-terminal-fileicon "javascript"         :v-adjust -0.1 :face icons-in-terminal-yellow)
     (rjsx-mode                 icons-in-terminal-fileicon "jsx-2"              :v-adjust -0.1 :face icons-in-terminal-cyan-alt)
     (term-mode                 icons-in-terminal-octicon "terminal"            :v-adjust 0.2)
+    (vterm-mode                icons-in-terminal-octicon "terminal"            :v-adjust 0.2)
     (eshell-mode               icons-in-terminal-octicon "terminal"            :v-adjust 0.0 :face icons-in-terminal-purple)
     (magit-refs-mode           icons-in-terminal-octicon "git-branch"          :v-adjust 0.0 :face icons-in-terminal-red)
     (magit-process-mode        icons-in-terminal-octicon "mark-github"         :v-adjust 0.0)
@@ -407,15 +514,21 @@
     (magit-popup-mode          icons-in-terminal-fileicon "git"                :face icons-in-terminal-red)
     (magit-status-mode         icons-in-terminal-fileicon "git"                :face icons-in-terminal-lred)
     (magit-log-mode            icons-in-terminal-fileicon "git"                :face icons-in-terminal-green)
+    (mu4e-compose-mode         icons-in-termiinal-octicon "pencil"              :v-adjust 0.0)
+    (mu4e-headers-mode         icons-in-termiinal-octicon "mail"                :v-adjust 0.0)
+    (mu4e-main-mode            icons-in-termiinal-octicon "mail"                :v-adjust 0.0)
+    (mu4e-view-mode            icons-in-termiinal-octicon "mail-read"           :v-adjust 0.0)
+    (package-menu-mode         icons-in-termiinal-faicon "archive"              :height 1.0 :v-adjust 0.0 :face icons-in-termiinal-silver)
     (paradox-menu-mode         icons-in-terminal-faicon "archive"              :height 1.0 :v-adjust 0.0 :face icons-in-terminal-silver)
     (Custom-mode               icons-in-terminal-octicon "settings")
 
     ;; Special matcher for Web Mode based on the `web-mode-content-type' of the current buffer
-    (web-mode             icons-in-terminal--web-mode-icon)
+    (web-mode                           icons-in-terminal--web-mode-icon)
 
     (fundamental-mode                   icons-in-terminal-fileicon "elisp"          :height 1.0 :v-adjust -0.2 :face icons-in-terminal-dsilver)
     (special-mode                       icons-in-terminal-fileicon "elisp"          :height 1.0 :v-adjust -0.2 :face icons-in-terminal-yellow)
     (text-mode                          icons-in-terminal-octicon "file-text"       :v-adjust 0.0 :face icons-in-terminal-cyan)
+    (enh-ruby-mode                      icons-in-terminal-fileicon "ruby-alt"       :face icons-in-terminal-lred)
     (ruby-mode                          icons-in-terminal-fileicon "ruby-alt"       :face icons-in-terminal-lred)
     (inf-ruby-mode                      icons-in-terminal-fileicon "ruby-alt"       :face icons-in-terminal-red)
     (projectile-rails-compilation-mode  icons-in-terminal-fileicon "ruby-alt"       :face icons-in-terminal-red)
@@ -453,7 +566,6 @@
     (ein:notebook-mode                  icons-in-terminal-fileicon "jupyter"        :height 1.2 :face icons-in-terminal-orange)
     (ein:notebook-multilang-mode        icons-in-terminal-fileicon "jupyter"        :height 1.2 :face icons-in-terminal-orange)
     (nov-mode                           icons-in-terminal-faicon   "book"           :face icons-in-terminal-green)
-
     (scala-mode                         icons-in-terminal-fileicon "scala"          :face icons-in-terminal-red)
     (scheme-mode                        icons-in-terminal-fileicon "scheme"         :height 1.2 :face icons-in-terminal-red)
     (swift-mode                         icons-in-terminal-fileicon "swift"          :height 1.0 :v-adjust -0.1 :face icons-in-terminal-green)
@@ -472,6 +584,8 @@
     (stylus-mode                        icons-in-terminal-fileicon "stylus"         :face icons-in-terminal-lgreen)
     (csv-mode                           icons-in-terminal-octicon "graph"           :v-adjust 0.0 :face icons-in-terminal-dblue)
     (haskell-mode                       icons-in-terminal-fileicon "haskell"        :height 1.0  :face icons-in-terminal-red)
+    (haskell-c2hs-mode                  icons-in-terminal-fileicon "haskell"        :height 1.0  :face icons-in-terminal-red)
+    (literate-haskell-mode              icons-in-terminal-fileicon "haskell"        :height 1.0  :face icons-in-terminal-red)
     (haml-mode                          icons-in-terminal-fileicon "haml"           :face icons-in-terminal-lyellow)
     (html-mode                          icons-in-terminal-fileicon "html5"          :face icons-in-terminal-orange)
     (rhtml-mode                         icons-in-terminal-fileicon "html5"          :face icons-in-terminal-lred)
@@ -490,6 +604,27 @@
     (objc-mode                          icons-in-terminal-faicon "apple"            :v-adjust 0.0 :height 1.0)
     (tuareg-mode                        icons-in-terminal-fileicon "ocaml"          :v-adjust 0.0 :height 1.0)
     (purescript-mode                    icons-in-terminal-fileicon "purescript"     :v-adjust 0.0 :height 1.0)
+    (verilog-mode                       icons-in-terminal-fileicon "verilog"          :height 1.0 :v-adjust -0.2 :face icons-in-terminal-red)
+    (vhdl-mode                          icons-in-terminal-fileicon "vhdl"             :face icons-in-terminal-blue)
+    (haskell-cabal-mode                 icons-in-terminal-fileicon "cabal"            :face icons-in-terminal-lblue)
+    (kotlin-mode                        icons-in-terminal-fileicon "kotlin"           :face icons-in-terminal-orange)
+    (nim-mode                           icons-in-terminal-fileicon "nimrod"           :face icons-in-terminal-yellow)
+    (sql-mode                           icons-in-terminal-octicon  "database"         :face icons-in-terminal-silver)
+    (lua-mode                           icons-in-terminal-fileicon "lua"              :face icons-in-terminal-dblue)
+    (adoc-mode                          icons-in-terminal-fileicon "asciidoc"         :face icons-in-terminal-lblue)
+    (puppet-mode                        icons-in-terminal-fileicon "puppet"           :face icons-in-terminal-yellow)
+    (jinja2-mode                        icons-in-terminal-fileicon "jinja"            :face icons-in-terminal-silver)
+    (powershell-mode                    icons-in-terminal-fileicon "powershell"       :face icons-in-terminal-blue)
+    (tex-mode                           icons-in-terminal-fileicon "tex"              :face icons-in-terminal-lred)
+    (latex-mode                         icons-in-terminal-fileicon "tex"              :face icons-in-terminal-lred)
+    (dart-mode                          icons-in-terminal-fileicon "dart"             :height 1.0  :face icons-in-terminal-blue)
+    ;; (fsharp-mode                        icons-in-terminal-fileicon "fsharp"           :height 1.0  :face icons-in-terminal-blue)
+    (asm-mode                           icons-in-terminal-fileicon "microchip"        :height 1.0  :face icons-in-terminal-blue)
+    (nasm-mode                          icons-in-terminal-fileicon "microchip"        :height 1.0  :face icons-in-terminal-blue)
+    (tcl-mode                           icons-in-terminal-fileicon "tcl"              :height 1.0  :face icons-in-terminal-dred)
+    (cuda-mode                          icons-in-terminal-fileicon "nvidia"           :face icons-in-terminal-green)
+    ;; (glsl-mode                          icons-in-terminal-fileicon "vertex-shader"    :face icons-in-terminal-green)
+    ;; (zig-mode                           icons-in-terminal-fileicon "zig"              :face icons-in-terminal-orange)
     ))
 
 (defvar icons-in-terminal-url-alist
